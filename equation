@@ -1,0 +1,38 @@
+import "dart:math";
+
+void main() {
+  quadraticEquation(11, -120, -11); // Должен вывести x1=11, x2=-0.09
+  quadraticEquation(1, 6, 9); // Должен вывести: x=3
+  quadraticEquation(1, 1, 1); // Должен вывести: нет корней
+}
+
+void quadraticEquation(a, b, c) {
+  //Тут надо написать код решения
+
+  int d = b * b - 4 * a * c;
+  double k1 = -b / 2.0 / a;
+  double k2 = sqrt(d.abs()) / 2.0 / a;
+  if (d == 0) {
+    print("При a=1, b=6, c=9");
+    print("x=$k1");
+    print("   ");
+  } else {
+    if (d > 0) {
+      print("При a=11, b=-120, c=-11");
+      print("x1=${k1 + k2}");
+      double e = k1 - k2;
+      print("x2=$e");
+      print("e=${e.round}");
+      // print("x2=${p1-p2}");
+      print("   ");
+    } else {
+      print("При a=1, b=1, c=1");
+      print("корней нет");
+    }
+    double round(double e) {
+      return ((e * 1000).floorToDouble()) * 1000;
+    }
+    //    print("x2=${round(e)}”)
+
+  }
+}
